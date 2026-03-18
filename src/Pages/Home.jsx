@@ -5,7 +5,7 @@ import CurvedLoop from '../components/CurvedLoop';
 import ScrollVelocity from '../components/ScrollVelocity';
 import Socials from '../components/Socials';
 import TiltedCard from '../components/TiltedCard';
-
+import CountUp from '../components/CountUp';
 
 const Home = () => {
 useEffect(() => {
@@ -68,6 +68,51 @@ useEffect(() => {
               <button className="btn-white-outline">Learn More</button>
             </div>
 
+            <div className="w-[75%] h-20 flex items-center gap-25 mt-10 ml-5">
+              <div className="flex flex-col justify-center items-center text-center">
+                <CountUp
+                  from={0}
+                  to={100}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                  startCounting
+                />
+                <p className='text-xl'>Units</p>
+              </div>
+              {/* <div className="self-stretch w-px bg-white/20"></div> */}
+              <div className="flex flex-col justify-center items-center text-center">
+                <span className='flex gap-2'>
+                  <CountUp
+                    from={0}
+                    to={99}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                    startCounting
+                  />
+                  <p className=''>%</p>
+                </span>
+                <p className='text-xl'>Accuracy</p>
+              </div>
+              <div className="flex flex-col justify-center items-center text-center">
+                <span className='flex gap-2'>
+                  <CountUp
+                    from={0}
+                    to={1000}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                    startCounting
+                  />
+                  <p className=''>+</p>
+                </span>
+                <p className='text-xl'>Neurons</p>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
         {/* CENTER: Spline */}
-        <div className="w-full md:w-[48%] h-48 md:h-100 relative">
+        <div className="w-full md:w-[58%] h-48 md:h-100 relative">
           <Spline scene="https://prod.spline.design/p5Z-jq1vxUDynMTH/scene.splinecode" />
           <div className="absolute bottom-5 right-3 w-[150px] h-[50px] bg-black"></div>
         </div>
