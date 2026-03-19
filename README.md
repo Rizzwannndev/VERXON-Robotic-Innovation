@@ -95,7 +95,7 @@ src/
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/vorxen.git
+git clone https://github.com/Rizzwannndev/VERXON-Robotic-Innovation.git
 
 # Go into the project
 cd vorxen
