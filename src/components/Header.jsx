@@ -21,7 +21,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <header className="appear-animation w-full px-4 sm:px-6 md:px-3 lg:px-8 py-4 bg-transparent absolute flex justify-center items-center luna z-2">
+    <header className="appear-animation w-full px-4 sm:px-6 md:px-3 lg:px-8 py-4 bg-transparent absolute flex justify-center items-center luna z-9999">
       
 
         {/* Logo */}
@@ -30,13 +30,13 @@ useEffect(() => {
         </h1>
         <div className="w-[75%] flex justify-center items-center px-18"><span className="h-[1px] w-full bg-white block"></span></div>
         {/* Desktop Nav */}
-        <div className="hidden md:flex navLinks gap-10 text-lg lg:text-[16px] mr-5 items-center font-semibold">
+        <div className="hidden md:flex navLinks gap-10 text-lg lg:text-[16px] mt-2 mr-5 items-center font-semibold">
             <span className="hover:translate-y-1 duration-300 transition-all ease-out underline-animation">
                 <TransitionLink to="/">Home</TransitionLink>
             </span>
 
             <span className="hover:translate-y-1 duration-300 transition-all ease-out underline-animation">
-                <TransitionLink to="/page2">About</TransitionLink>
+                <TransitionLink to="/about">About</TransitionLink>
             </span>
             <SoundPlayer />
         </div>

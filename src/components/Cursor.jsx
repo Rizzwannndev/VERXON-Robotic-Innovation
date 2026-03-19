@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 
 const Cursor = () => {
   const cursorRef = useRef(null);
   const animationFrame = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -19,7 +21,6 @@ const Cursor = () => {
 
     window.addEventListener("mousemove", moveCursor);
 
-    // Smooth trailing loop
     const animate = () => {
       if (cursor) {
         gsap.to(cursor, {
@@ -33,22 +34,13 @@ const Cursor = () => {
     };
     animate();
 
-    // Hover effects
+    // Hover effects #1
     const addHover = () =>
-      gsap.to(cursor, {
-        scale: 5,
-        backgroundColor: "white",
-        duration: 0.2,
-      });
+      gsap.to(cursor, { scale: 5, backgroundColor: "white", duration: 0.2 });
 
     const removeHover = () =>
-      gsap.to(cursor, {
-        scale: 1,
-        backgroundColor: "white",
-        duration: 0.2,
-      });
+      gsap.to(cursor, { scale: 1, backgroundColor: "white", duration: 0.2 });
 
-    // Wait until elements exist
     const setHoverListeners = () => {
       const hoverEls = document.querySelectorAll(".main-head");
       hoverEls.forEach((el) => {
@@ -64,14 +56,38 @@ const Cursor = () => {
       };
     };
 
+    // Hover effects #2
+    const addHover2 = () =>
+      gsap.to(cursor, { scale: 12, backgroundColor: "white", duration: 0.2 });
+
+    const removeHover2 = () =>
+      gsap.to(cursor, { scale: 1, backgroundColor: "white", duration: 0.2 });
+
+    const setHoverListeners2 = () => {
+      const hoverEls = document.querySelectorAll(".cursor-scale");
+      hoverEls.forEach((el) => {
+        el.addEventListener("mouseenter", addHover2);
+        el.addEventListener("mouseleave", removeHover2);
+      });
+
+      return () => {
+        hoverEls.forEach((el) => {
+          el.removeEventListener("mouseenter", addHover2);
+          el.removeEventListener("mouseleave", removeHover2);
+        });
+      };
+    };
+
     const cleanupHover = setHoverListeners();
+    const cleanupHover2 = setHoverListeners2();
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
       cleanupHover && cleanupHover();
+      cleanupHover2 && cleanupHover2();
     };
-  }, []);
+  }, [location]);
 
   return (
     <div

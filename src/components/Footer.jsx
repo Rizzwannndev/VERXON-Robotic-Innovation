@@ -3,7 +3,7 @@ import Socials from './Socials';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white py-12 px-6 md:px-16">
+    <footer className="w-full bg-black text-white pt-10 px-6 md:px-16 z-2">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-0">
         
         {/* LEFT: Logo + Text + Socials */}
@@ -36,6 +36,9 @@ const Footer = () => {
             Designed & Made By <span className='hover:pl-2 duration-300 transition-all ease-out '>Rizwan Waseem</span>
         </p>
         </div>
+      </div>
+      <div className="big-text flex justify-center items-center">
+        <h1 className="text-[200px] text-center cursor-scale -my-12">VORXEN</h1>
       </div>
     </footer>
   );

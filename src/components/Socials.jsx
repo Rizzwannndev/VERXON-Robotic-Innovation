@@ -1,4 +1,4 @@
-import { FaInstagram, FaTwitter, FaFacebookF, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedin } from 'react-icons/fa';
 
 const Socials = () => {
   return (
@@ -15,7 +15,7 @@ const Socials = () => {
       {[
         { href: 'https://instagram.com', label: 'Instagram', icon: <FaInstagram /> },
         { href: 'https://twitter.com', label: 'Twitter', icon: <FaTwitter /> },
-        { href: 'https://www.tiktok.com', label: 'TikTok', icon: <FaTiktok /> },
+        { href: 'https://www.tiktok.com', label: 'TikTok', icon: <FaLinkedin /> },
         { href: 'https://facebook.com', label: 'Facebook', icon: <FaFacebookF /> },
       ].map(({ href, label, icon }) => (
         <a
@@ -34,6 +34,7 @@ const Socials = () => {
             focus:outline-none focus:ring-2 focus:ring-white/60
             shadow-md
             hover:shadow-lg
+            z-9999
           "
           style={{ willChange: 'transform, background-color, color, box-shadow' }}
         >

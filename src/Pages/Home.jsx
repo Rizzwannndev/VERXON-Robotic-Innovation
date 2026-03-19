@@ -68,11 +68,11 @@ useEffect(() => {
               <button className="btn-white-outline">Learn More</button>
             </div>
 
-            <div className="w-[75%] h-20 flex items-center gap-25 mt-10 ml-5">
+            <div className="w-[75%] h-20 flex items-center gap-20 mt-10 ml-5">
               <div className="flex flex-col justify-center items-center text-center">
                 <CountUp
                   from={0}
-                  to={100}
+                  to={15}
                   separator=","
                   direction="up"
                   duration={1}
@@ -81,7 +81,6 @@ useEffect(() => {
                 />
                 <p className='text-xl'>Units</p>
               </div>
-              {/* <div className="self-stretch w-px bg-white/20"></div> */}
               <div className="flex flex-col justify-center items-center text-center">
                 <span className='flex gap-2'>
                   <CountUp
@@ -126,7 +125,8 @@ useEffect(() => {
       </div>
     </div>
 
-    <div className="main-head w-full bg-black h-auto mb-30 pb-0">
+    {/* Scroll Velocity */}
+    <div className="cursor-scale full bg-black h-auto mb-30 pb-0">
       <ScrollVelocity
         texts={[
           "Intelligent Interfaces ✦ Immersive 3D ✦",
